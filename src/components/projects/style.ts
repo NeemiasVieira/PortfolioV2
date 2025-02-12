@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 
@@ -35,16 +36,15 @@ export const ProjectItem = styled.li`
   font-size: 0.9rem;
   margin-top: 10px;
   height: 100%;
+`;
 
-  img {
-    aspect-ratio: 1;
-    width: 150px;
-    border-radius: 15px;
-    align-self: center;
-    object-fit: contain;
-    object-position: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+export const ProjectImage = styled(Image)`
+  aspect-ratio: 1;
+  width: 150px;
+  border-radius: 15px;
+  align-self: center;
+  object-fit: contain;
+  object-position: center;
 `;
 
 export const ProjectLicense = styled.span<{ $isOpenSource?: boolean }>`

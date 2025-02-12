@@ -6,6 +6,7 @@ import { projects } from './contract';
 import {
   DetailsButton,
   ProjectDetailsContainer,
+  ProjectImage,
   ProjectInfo,
   ProjectItem,
   ProjectLicense,
@@ -13,7 +14,7 @@ import {
   ProjectsWrapper,
 } from './style';
 import { getProjectTime } from './utils';
-import { faAlignRight, faCalendar, faCode, faCodeBranch, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar, faCode, faCodeBranch, faLock } from '@fortawesome/free-solid-svg-icons';
 import { Fade } from 'react-awesome-reveal';
 
 export const Projects = () => {
@@ -24,19 +25,13 @@ export const Projects = () => {
         {projects.map((project) => (
           <Fade duration={700} direction="right" key={project.id}>
             <ProjectItem>
-              <img src={project.coverImage} alt="teste" />
+              <ProjectImage src={project.coverImage} alt="Project image" fill />
               <ProjectDetailsContainer>
                 <h3>{project.title} </h3>
                 <ProjectLicense $isOpenSource={project.isOpenSource}>
                   <FontAwesomeIcon icon={project.isOpenSource ? faCodeBranch : faLock} />
                   {project.isOpenSource ? 'Open Source' : 'Código Privado'}
                 </ProjectLicense>
-                {/* <ProjectInfo>
-                  <FontAwesomeIcon icon={faAlignRight} />
-                  <p>
-                    <b>Descrição: </b> {project.description.split('.')[0]}
-                  </p>
-                </ProjectInfo> */}
                 <ProjectInfo>
                   <FontAwesomeIcon icon={faCode} />
                   <p>

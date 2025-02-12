@@ -55,16 +55,8 @@ export const Header = () => {
               Projetos
             </a>
           </li>
-          {/* <li>
-            <Link href="#">FAQ</Link>
-          </li> */}
           <li>
-            <a
-              href="https://wa.me/5513996020483?text=Olá,%20tudo%20bem?%20Vim%20através%20do%20seu%20portfólio,%20podemos%20conversar?"
-              target="_blank"
-            >
-              Fale comigo
-            </a>
+            <Link href="/contact">Contatos</Link>
           </li>
         </ul>
       </nav>

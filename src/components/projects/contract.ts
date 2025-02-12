@@ -1,16 +1,34 @@
+import { IconDefinition, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+
 export interface Project {
   id: number;
   title: string;
   description: string;
   isOpenSource: boolean;
-  coverImage?: string;
+  coverImage: string;
   image?: string;
-  repositoryLink?: string;
-  projectLink?: string;
+  links?: ProjectLink[];
   initialDate: Date;
   finalDate?: Date;
   tecnologies: string[];
 }
+
+export interface ProjectLink {
+  link: string;
+  label: string;
+  icon?: IconDefinition;
+}
+
+enum LinkLabel {
+  REPOSITORY = 'Repositório',
+  PROJECT = 'Projeto',
+}
+
+const LinkIcon = {
+  PROJECT: faCirclePlay,
+  REPOSITORY: faGithub,
+} as const;
 
 const Data = (mes: number, ano: number) => new Date(ano, mes - 1);
 
@@ -20,12 +38,19 @@ export const projects: Project[] = [
     title: 'DK Pedras Decorativas',
     description:
       'Projeto Freelance: Desenvolvimento de site para loja com catálogo de produtos. Responsável por prototipação, design, implementação de funcionalidades e manutenção. Otimizei a latência das imagens utilizando o Cloudinary com CDN para carregamento eficiente, maximizando recursos do plano gratuito',
-    projectLink: 'https://dkpedrasdecorativas.com.br',
+
     isOpenSource: false,
     initialDate: Data(9, 2025),
     finalDate: Data(12, 2025),
     tecnologies: ['React', 'TypeScript', 'Cloudinary', 'Vercel'],
     coverImage: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1739128193/dkpedras-cover-image_vfcp4y.png',
+    links: [
+      {
+        link: 'https://dkpedrasdecorativas.com.br',
+        label: LinkLabel.PROJECT,
+        icon: LinkIcon.PROJECT,
+      },
+    ],
   },
   {
     id: 2,
@@ -34,6 +59,7 @@ export const projects: Project[] = [
       'Desenvolvimento de um produto de gestão e varejo de insumos agrícolas, com arquitetura baseada em microserviços e micro frontends, além de uma API Gateway. Responsável pelo refinamento de tarefas, implementação de novas funcionalidades, correção de bugs, integração com Microsoft Teams, processamento de planilhas de preços em Excel e PDFs, além de desenvolver fluxos de negociação de pedidos, catálogo de produtos e carrinho de compras.',
     isOpenSource: false,
     initialDate: Data(3, 2024),
+    coverImage: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1739127610/nutrien-solucoes-agricolas2_ef7qgo.jpg',
     tecnologies: [
       'React-Native com Expo para Web',
       'TypeScript',
@@ -44,7 +70,6 @@ export const projects: Project[] = [
       'Docker',
       'AWS Services',
     ],
-    coverImage: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1739127610/nutrien-solucoes-agricolas2_ef7qgo.jpg',
   },
   {
     id: 3,
@@ -68,6 +93,18 @@ export const projects: Project[] = [
       'TensorFlow',
     ],
     coverImage: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1739129069/sms-cover-image_d6qazf.png',
+    links: [
+      {
+        link: 'https://sms.devneemiasvieira.com',
+        label: LinkLabel.PROJECT,
+        icon: LinkIcon.PROJECT,
+      },
+      {
+        link: 'https://github.com/NeemiasVieira/SistemaDeMonitoramentoDoSolo',
+        label: LinkLabel.REPOSITORY,
+        icon: LinkIcon.REPOSITORY,
+      },
+    ],
   },
   {
     id: 4,
