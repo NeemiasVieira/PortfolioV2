@@ -22,6 +22,12 @@ export const ProjectList = styled.ul`
   width: 100%;
   justify-items: center;
   align-items: stretch;
+
+  @media screen and (max-width: 550px) {
+    grid-template-columns: repeat(auto-fill, minmax(90%, 1fr));
+    padding: 0 30px;
+    gap: 15px;
+  }
 `;
 
 export const ProjectItem = styled.li`
@@ -36,6 +42,11 @@ export const ProjectItem = styled.li`
   font-size: 0.9rem;
   margin-top: 10px;
   height: 100%;
+
+  @media screen and (max-width: 550px) {
+    flex-flow: column wrap;
+    width: 100%;
+  }
 `;
 
 export const ProjectImage = styled(Image)`
@@ -45,6 +56,10 @@ export const ProjectImage = styled(Image)`
   align-self: center;
   object-fit: contain;
   object-position: center;
+
+  @media screen and (max-width: 550px) {
+    width: 100%;
+  }
 `;
 
 export const ProjectLicense = styled.span<{ $isOpenSource?: boolean }>`
@@ -66,6 +81,13 @@ export const ProjectDetailsContainer = styled.div`
   display: flex;
   gap: 10px;
   flex-flow: column wrap;
+
+  @media screen and (max-width: 550px) {
+    padding: 0 10px;
+    h3 {
+      text-align: center;
+    }
+  }
 `;
 
 export const ProjectInfo = styled.div`
@@ -89,5 +111,10 @@ export const DetailsButton = styled(Link)`
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 100%;
+    margin-top: 10px;
   }
 `;

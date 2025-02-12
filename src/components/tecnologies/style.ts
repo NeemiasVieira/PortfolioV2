@@ -14,6 +14,17 @@ export const TecnologiesWrapper = styled.div`
   h2 {
     text-align: center;
   }
+
+  @media screen and (max-width: 1023px) {
+    width: 80%;
+    display: inline-block;
+    margin-top: 30px;
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 export const TecnologiesList = styled.div`
@@ -31,11 +42,20 @@ export const TecnologiesList = styled.div`
   a {
     text-decoration: none;
   }
+
+  @media screen and (max-width: 1023px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 12px;
+
+    div {
+      gap: 5px;
+    }
+  }
 `;
 
 export const TecnologyItem = styled.div<{ $hoverColor: string }>`
   display: flex;
-  flex-direction: column;
   align-items: center;
   transition: color 250ms;
   flex-flow: column wrap;
@@ -53,5 +73,14 @@ export const TecnologyItem = styled.div<{ $hoverColor: string }>`
     margin-top: 5px;
     color: #fff;
     transition: color 250ms;
+  }
+
+  @media screen and (max-width: 1023px) {
+    span {
+      margin: 0;
+      color: #fff;
+    }
+
+    color: ${({ $hoverColor }) => $hoverColor};
   }
 `;

@@ -25,7 +25,7 @@ export const Projects = () => {
         {projects.map((project) => (
           <Fade duration={700} direction="right" key={project.id}>
             <ProjectItem>
-              <ProjectImage src={project.coverImage} alt="Project image" fill />
+              <ProjectImage src={project.coverImage} alt="Project image" width={150} height={150} />
               <ProjectDetailsContainer>
                 <h3>{project.title} </h3>
                 <ProjectLicense $isOpenSource={project.isOpenSource}>

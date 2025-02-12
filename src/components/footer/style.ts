@@ -10,6 +10,10 @@ export const FooterWrapper = styled.footer`
   max-width: 1400px;
   justify-self: center;
   margin: 20px 0;
+
+  @media screen and (max-width: 1080px) {
+    width: 90%;
+  }
 `;
 
 export const LogoAndSocialLinksContainer = styled.div`
@@ -29,6 +33,10 @@ export const DevNeemiasVieiraLogo = styled.span`
   b {
     color: #fff;
   }
+
+  @media screen and (max-width: 1080px) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const SocialLinksList = styled.ul`
@@ -38,6 +46,10 @@ export const SocialLinksList = styled.ul`
   gap: 16px;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 1080px) {
+    gap: 12px;
+  }
 `;
 
 export const SocialLinkItem = styled.li<{ $hoverColor: string }>`
@@ -47,6 +59,12 @@ export const SocialLinkItem = styled.li<{ $hoverColor: string }>`
     transition: color 200ms ease-in-out;
     &:hover {
       color: ${({ $hoverColor }) => $hoverColor};
+    }
+  }
+
+  @media screen and (max-width: 1080px) {
+    svg {
+      font-size: 1.3rem;
     }
   }
 `;
@@ -63,5 +81,9 @@ export const EndContainer = styled.div`
   width: 100%;
   a {
     color: var(--primary-color);
+  }
+
+  @media screen and (max-width: 1080px) {
+    font-size: 0.9rem;
   }
 `;

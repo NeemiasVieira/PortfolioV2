@@ -11,6 +11,10 @@ export const CompetenciesWrapper = styled.div`
   h2 {
     text-align: center;
   }
+
+  @media screen and (max-width: 1023px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const CompetenciesList = styled.ul`
@@ -21,6 +25,10 @@ export const CompetenciesList = styled.ul`
   max-width: 1200px;
   width: 90%;
   margin: 0;
+
+  @media screen and (max-width: 1023px) {
+    max-width: none;
+  }
 `;
 
 export const CompetencieItem = styled.li`
@@ -40,5 +48,20 @@ export const CompetencieItem = styled.li`
     justify-content: center;
     flex-flow: column wrap;
     gap: 15px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    width: 90%;
+
+    svg {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
   }
 `;

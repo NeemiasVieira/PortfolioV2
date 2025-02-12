@@ -8,6 +8,11 @@ export const ProjectDetailsWrapper = styled.div`
   flex-flow: column wrap;
   width: 100%;
   font-size: 1.1rem;
+
+  @media screen and (max-width: 480px) {
+    font-size: 1rem;
+    min-height: 90vh;
+  }
 `;
 
 export const ProjectContent = styled.div`
@@ -16,6 +21,12 @@ export const ProjectContent = styled.div`
   flex-flow: row nowrap;
   gap: 50px;
   max-width: 1400px;
+
+  @media screen and (max-width: 1023px) {
+    flex-flow: column wrap;
+    align-items: center;
+    font-size: 0.9rem;
+  }
 `;
 
 export const ProjectInformation = styled.div`
@@ -29,6 +40,16 @@ export const ProjectInformation = styled.div`
   h1 {
     text-align: start;
     width: 100%;
+  }
+
+  @media screen and (max-width: 480px) {
+    max-width: none;
+    width: 85%;
+
+    h1 {
+      font-size: 1.4rem;
+    }
+    font-size: 0.85rem;
   }
 `;
 
@@ -70,6 +91,10 @@ export const ProjectLink = styled.a`
   &:hover {
     transform: scale(1.1);
   }
+
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 export const LGPDWarn = styled.span`
@@ -99,6 +124,18 @@ export const LGPDWarn = styled.span`
 
     strong {
       font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 0.7rem;
+    .titleAndIcon {
+      strong {
+        font-size: 0.8rem;
+      }
+      svg {
+        font-size: 1.5rem;
+      }
     }
   }
 `;

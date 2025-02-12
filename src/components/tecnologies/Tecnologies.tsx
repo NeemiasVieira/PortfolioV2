@@ -11,6 +11,8 @@ import {
   SiAmazonwebservices,
 } from 'react-icons/si';
 import { HomePageLocalRoutes } from '../header/Contract';
+import useBreakpoints from '@/hooks/useBreakpoints';
+import { useMemo } from 'react';
 
 const tecnologies = [
   { icon: SiTypescript, hoverColor: '#3178C6', link: 'https://www.typescriptlang.org/', name: 'TypeScript' },
@@ -22,13 +24,17 @@ const tecnologies = [
   { icon: SiAmazonwebservices, hoverColor: '#FF9900', link: 'https://aws.amazon.com/', name: 'AWS Services' },
 ];
 
-const size = 50;
-
 export const Tecnologies = () => {
+  const { isMobile, isTablet } = useBreakpoints();
+
+  const size = useMemo(() => {
+    return isMobile || isTablet ? 25 : 50;
+  }, [isTablet, isMobile]);
+
   return (
     <TecnologiesWrapper id={HomePageLocalRoutes.TECNOLOGIES}>
       <h2>Tecnologias</h2>
-      <Fade duration={750} direction="down">
+      <Fade duration={750} direction="right">
         <TecnologiesList>
           {tecnologies.map((tech, index) => (
             <TecnologyItem $hoverColor={tech.hoverColor} key={index}>

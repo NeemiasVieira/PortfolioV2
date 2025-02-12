@@ -8,6 +8,15 @@ export const ContactsWrapper = styled.div`
   min-height: 100vh;
   gap: 50px;
   width: 100%;
+
+  @media screen and (max-width: 1023px) {
+    margin-top: 70px;
+    justify-content: start;
+
+    h1 {
+      margin-top: 40px;
+    }
+  }
 `;
 
 export const ContactList = styled.ul`
@@ -18,6 +27,10 @@ export const ContactList = styled.ul`
   flex-flow: column wrap;
   gap: 40px;
   width: 100%;
+
+  @media screen and (max-width: 1023px) {
+    gap: 20px;
+  }
 `;
 
 export const ContactItem = styled.li<{ $hoverColor: string }>`
@@ -52,6 +65,16 @@ export const ContactItem = styled.li<{ $hoverColor: string }>`
       color: ${({ $hoverColor }) => $hoverColor};
       border: ${({ $hoverColor }) => `solid ${$hoverColor} 2px`};
       font-weight: 800;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 480px) {
+    a {
+      padding: 15px;
     }
   }
 `;

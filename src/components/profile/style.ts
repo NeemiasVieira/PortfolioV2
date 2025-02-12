@@ -18,7 +18,7 @@ export const ImageAndTitle = styled.div`
   gap: 5px;
   flex-flow: column wrap;
   position: relative;
-  width: 50%;
+  width: 100%;
   max-width: 1000px;
 
   h2 {
@@ -26,17 +26,15 @@ export const ImageAndTitle = styled.div`
     font-size: 2.2rem;
     white-space: nowrap;
     margin: 15px 0 0 0;
-    /* color: var(--primary-color); */
     position: relative;
     text-align: start;
   }
 
   .border-animation {
     z-index: 0;
-    max-width: 180px;
     opacity: 1;
+    aspect-ratio: 1;
     width: 180px;
-    height: 180px;
     border-radius: 100%;
     position: absolute;
     top: 0;
@@ -44,6 +42,17 @@ export const ImageAndTitle = styled.div`
     transform: translateX(-50%);
     box-shadow: 0 0 20px 2px var(--primary-color);
     animation: fadeInOut 2s infinite;
+  }
+
+  @media screen and (max-width: 1023px) {
+    margin-top: 30px;
+    .border-animation {
+      width: 150px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 
   @keyframes fadeInOut {
@@ -70,6 +79,10 @@ export const ProfileImage = styled(Image)`
   transition: all 300ms;
   z-index: 1;
   position: relative;
+
+  @media screen and (max-width: 1023px) {
+    width: 150px;
+  }
 `;
 
 export const About = styled.div`
@@ -78,6 +91,10 @@ export const About = styled.div`
   align-items: center;
   gap: 50px;
   margin-top: 30px;
+
+  @media screen and (max-width: 1023px) {
+    margin: 0;
+  }
 `;
 
 export const SocialLinks = styled.div`
@@ -92,6 +109,12 @@ export const SocialLinks = styled.div`
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 8px;
+  }
+
+  @media screen and (max-width: 1023px) {
+    h3 {
+      font-size: 1.2rem;
+    }
   }
 `;
 
@@ -120,19 +143,24 @@ export const SocialLinkItem = styled.li<{ $hoverColor: string }>`
     border-radius: 100%;
     transition: transform 200ms ease;
     cursor: pointer;
+  }
 
+  svg {
+    color: #fff;
+    font-size: 2rem;
+    transition: color 200ms ease;
+  }
+
+  &:hover {
+    background-color: #111;
+    transform: scale(1.1);
     svg {
-      color: #fff;
-      font-size: 2rem;
-      transition: color 200ms ease;
+      color: ${({ $hoverColor }) => $hoverColor};
     }
-
-    &:hover {
-      background-color: #111;
-      transform: scale(1.1);
-      svg {
-        color: ${({ $hoverColor }) => $hoverColor};
-      }
+  }
+  @media screen and (max-width: 1023px) {
+    svg {
+      font-size: 1.5rem;
     }
   }
 `;
@@ -146,6 +174,12 @@ export const Content = styled.div`
   width: 70%;
   max-width: 1400px;
   margin-top: 80px;
+
+  @media screen and (max-width: 1023px) {
+    flex-flow: column wrap;
+    margin-top: 50px;
+    gap: 25px;
+  }
 `;
 
 export const Texts = styled.div`
@@ -171,6 +205,10 @@ export const Texts = styled.div`
 
   h4 {
     font-weight: 600;
+  }
+
+  @media screen and (max-width: 1023px) {
+    font-size: 1rem;
   }
 `;
 
@@ -203,6 +241,19 @@ export const CvContainer = styled.div`
       transform: scale(1.1);
     }
   }
+
+  @media screen and (max-width: 1023px) {
+    h3 {
+      font-size: 1.2rem;
+    }
+    a {
+      gap: 8px;
+      font-size: 1.2rem;
+    }
+    svg {
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 export const Actions = styled.div`
@@ -227,4 +278,8 @@ export const DecorativeIcon = styled(FontAwesomeIcon)<{
   top: ${(props) => props.$top};
   bottom: ${(props) => props.$bottom};
   z-index: -1;
+
+  @media screen and (max-width: 1023px) {
+    font-size: 2rem;
+  }
 `;
