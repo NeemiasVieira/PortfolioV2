@@ -11,7 +11,11 @@ export const FooterWrapper = styled.footer`
   margin: 20px 0;
 
   @media screen and (max-width: 1080px) {
-    width: 90%;
+    width: 85%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 80%;
   }
 `;
 
@@ -35,6 +39,10 @@ export const DevNeemiasVieiraLogo = styled.span`
 
   @media screen and (max-width: 1080px) {
     font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 1.1rem;
   }
 `;
 
@@ -64,6 +72,12 @@ export const SocialLinkItem = styled.li<{ $hoverColor: string }>`
   @media screen and (max-width: 1080px) {
     svg {
       font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    svg {
+      font-size: 1.2rem;
     }
   }
 `;
