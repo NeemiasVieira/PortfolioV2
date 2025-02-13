@@ -107,10 +107,10 @@ export const Header = () => {
             </ul>
           </nav>
           <MobileLanguageSelector>
-            <LanguageButton active={language === 'pt-BR'} onClick={() => setLanguage('pt-BR')}>
+            <LanguageButton $active={language === 'pt-BR'} onClick={() => setLanguage('pt-BR')}>
               <img src="https://flagcdn.com/w40/br.png" alt="Português" />
             </LanguageButton>
-            <LanguageButton active={language === 'en'} onClick={() => setLanguage('en')}>
+            <LanguageButton $active={language === 'en'} onClick={() => setLanguage('en')}>
               <img src="https://flagcdn.com/w40/us.png" alt="English" />
             </LanguageButton>
           </MobileLanguageSelector>
@@ -157,10 +157,10 @@ export const Header = () => {
           </li>
           <li>
             <LanguageSelector>
-              <LanguageButton active={language === 'pt-BR'} onClick={() => setLanguage('pt-BR')}>
+              <LanguageButton $active={language === 'pt-BR'} onClick={() => setLanguage('pt-BR')}>
                 <img src="https://flagcdn.com/w40/br.png" alt="Português" />
               </LanguageButton>
-              <LanguageButton active={language === 'en'} onClick={() => setLanguage('en')}>
+              <LanguageButton $active={language === 'en'} onClick={() => setLanguage('en')}>
                 <img src="https://flagcdn.com/w40/us.png" alt="English" />
               </LanguageButton>
             </LanguageSelector>

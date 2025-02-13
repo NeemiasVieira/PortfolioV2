@@ -123,11 +123,11 @@ export const LanguageSelector = styled.div`
   align-items: center;
 `;
 
-export const LanguageButton = styled.button<{ active: boolean }>`
+export const LanguageButton = styled.button<{ $active: boolean }>`
   background: none;
   border: none;
   cursor: pointer;
-  opacity: ${({ active }) => (active ? 1 : 0.5)};
+  opacity: ${({ $active }) => ($active ? 1 : 0.5)};
   transition: opacity 0.2s ease-in-out;
 
   &:hover {

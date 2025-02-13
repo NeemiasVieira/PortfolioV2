@@ -27,21 +27,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const { language, setLanguage, messages } = useLanguageStore();
+  const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
   useEffect(() => {
-    const storedLang = getCookie('locale');
-    if (storedLang && storedLang !== language) {
-      setLanguage(storedLang);
+    if (!messages) {
+      const storedLang = getCookie('locale');
+      setLanguage(storedLang || 'pt-BR');
     }
-  }, [language, setLanguage]);
+  }, [messages, setLanguage]);
   return (
-    <html lang="pt-BR">
+    <html lang={language}>
       <head>
         <title>Neemias Vieira</title>
         <meta name="description" content="Portfólio de Neemias Vieira" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className={montserrat.className}>
-        <NextIntlClientProvider messages={messages} locale={language}>
+        <NextIntlClientProvider messages={messages} locale={language} timeZone={timeZone}>
           <Header />
           {children}
           <Footer />
