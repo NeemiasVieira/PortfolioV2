@@ -4,19 +4,10 @@ export const FooterWrapper = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: column wrap;
-  width: 60%;
+  width: 100%;
   max-width: 1400px;
   justify-self: center;
   margin: 20px 0;
-
-  @media screen and (max-width: 1080px) {
-    width: 85%;
-  }
-
-  @media screen and (max-width: 480px) {
-    width: 80%;
-  }
 `;
 
 export const LogoAndSocialLinksContainer = styled.div`
@@ -98,5 +89,16 @@ export const EndContainer = styled.div`
 
   @media screen and (max-width: 1080px) {
     font-size: 0.9rem;
+  }
+`;
+
+export const FooterContainer = styled.div`
+  width: 60%;
+  @media screen and (max-width: 1080px) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 80%;
   }
 `;
