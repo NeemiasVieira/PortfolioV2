@@ -5,10 +5,6 @@ const nextConfig: NextConfig = {
   compiler: {
     styledComponents: true,
   },
-  i18n: {
-    locales: ['en', 'pt-BR'],
-    defaultLocale: 'pt-BR',
-  },
   reactStrictMode: true,
   images: {
     remotePatterns: [
