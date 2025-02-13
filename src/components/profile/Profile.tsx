@@ -18,14 +18,19 @@ import NeemiasImage from '../../assets/images/neemias.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { socialLinks } from './contract';
 import { faCode, faCodeBranch, faDatabase, faFileLines, faRocket } from '@fortawesome/free-solid-svg-icons';
+import { useTranslations } from 'next-intl';
+import { useLanguageStore } from '@/stores/useLanguageStore';
 
 export const Profile = () => {
   const age = new Date().getFullYear() - 1999 - (new Date() < new Date(`11-23-${new Date().getFullYear()}`) ? 1 : 0);
+  const t = useTranslations();
+  const { language } = useLanguageStore();
+
   return (
     <ProfileWrapper>
       <ImageAndTitle>
         <ProfileImage src={NeemiasImage} alt="Imagem do Neemias" />
-        <h2>
+        <h2 key={language}>
           <Typewriter
             options={{
               loop: true,
@@ -33,10 +38,11 @@ export const Profile = () => {
               deleteSpeed: 1000,
             }}
             onInit={(typewriter) => {
-              typewriter.typeString('Desenvolvedor Full Stack').pauseFor(2000).deleteAll().start();
+              typewriter.typeString(t('developerFullStack')).pauseFor(2000).deleteAll().start();
             }}
           />
         </h2>
+
         <div className="border-animation"></div>
       </ImageAndTitle>
 
@@ -44,27 +50,26 @@ export const Profile = () => {
         <Content>
           <Texts>
             <h3>
-              Opa, eai, tudo bom?
+              {t('hello')}
               <br />
-              Seja muito bem-vindo ao meu portfólio
+              {t('welcome')}
             </h3>
 
-            <h4>Saiba um pouquinho sobre mim:</h4>
+            <h4>{t('resumeTitle')}</h4>
             <p>
-              Desenvolvedor de Software com {age} anos, formando em Engenharia da Computação, atuo na equipe da{' '}
+              {t('resume1', { age })}{' '}
               <a href="https://modalgr.io/" target="_blank">
                 <b>
                   <span style={{ color: ' rgb(48, 119, 171)' }}>Modal</span>
                   <span style={{ color: 'rgb(254, 122, 0)' }}>GR</span>
                 </b>
               </a>
-              . Apaixonado por tecnologia e resolução de problemas, tenho experiência sólida em desenvolvimento Web,
-              atuando em projetos profissionais, educacionais e pessoais. Focado em entregar soluções eficientes.
+              {t('resume2')}
             </p>
           </Texts>
           <Actions>
             <SocialLinks>
-              <h3>Contatos</h3>
+              <h3>{t('contactTitle')}</h3>
               <SocialLinksList>
                 {socialLinks.map(({ hoverColor, icon, link }) => (
                   <SocialLinkItem $hoverColor={hoverColor} key={link}>
@@ -76,12 +81,12 @@ export const Profile = () => {
               </SocialLinksList>
             </SocialLinks>
             <CvContainer>
-              <h3>Currículo</h3>
+              <h3>{t('cvTitle')}</h3>
               <a
                 target="_blank"
                 href="https://www.canva.com/design/DAGPEuJAXIs/kaVsT37vH__TY82ucAb-eg/view?utm_content=DAGPEuJAXIs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h62c0068d5f"
               >
-                Abrir
+                {t('cvActionLabel')}
                 <FontAwesomeIcon icon={faFileLines} />
               </a>
             </CvContainer>

@@ -1,6 +1,15 @@
 'use client';
 import Link from 'next/link';
-import { CloseMenuButton, HeaderStyle, MobileHeaderStyle, MobileMenu, ToggleMenuButton } from './style';
+import {
+  CloseMenuButton,
+  HeaderStyle,
+  LanguageButton,
+  LanguageSelector,
+  MobileHeaderStyle,
+  MobileLanguageSelector,
+  MobileMenu,
+  ToggleMenuButton,
+} from './style';
 import { HomePageLocalRoutes } from './Contract';
 import { useRouter } from 'next/navigation';
 import useBreakpoints from '@/hooks/useBreakpoints';
@@ -15,18 +24,23 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
+import { useLanguageStore } from '@/stores/useLanguageStore';
 
 export const Header = () => {
   const router = useRouter();
   const { isMobile, isTablet } = useBreakpoints();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
+  const t = useTranslations();
+  const { language, setLanguage } = useLanguageStore();
   const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
   const closeMenu = () => setIsMenuOpen(false);
 
   const handleNavigation = (e: React.MouseEvent, route: string) => {
     e.preventDefault();
     closeMenu();
+
+    if (typeof window === 'undefined') return;
 
     const isHashRoute = route.startsWith('#');
     const isHomePage = window.location.pathname === '/';
@@ -72,27 +86,34 @@ export const Header = () => {
             <ul>
               <li onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.TOP}`)}>
                 <FontAwesomeIcon icon={faHome} />
-                <a href={`#${HomePageLocalRoutes.TOP}`}>Início</a>
+                <a href={`#${HomePageLocalRoutes.TOP}`}>{t('header.home')}</a>
               </li>
               <li onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.TECNOLOGIES}`)}>
                 <FontAwesomeIcon icon={faCode} />
-                <a href={`#${HomePageLocalRoutes.TECNOLOGIES}`}>Tecnologias</a>
+                <a href={`#${HomePageLocalRoutes.TECNOLOGIES}`}>{t('header.tecnologies')}</a>
               </li>
-              <li onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.COMPETENCIES}`)}>
+              <li onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.SKILLS}`)}>
                 <FontAwesomeIcon icon={faPeopleGroup} />
-                <a href={`#${HomePageLocalRoutes.COMPETENCIES}`}>Competências</a>
+                <a href={`#${HomePageLocalRoutes.SKILLS}`}>{t('header.skills')}</a>
               </li>
               <li onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.PROJECTS}`)}>
                 <FontAwesomeIcon icon={faLaptopCode} />
-                <a href={`#${HomePageLocalRoutes.PROJECTS}`}>Projetos</a>
+                <a href={`#${HomePageLocalRoutes.PROJECTS}`}>{t('header.projects')}</a>
               </li>
               <li onClick={(e) => handleNavigation(e, '/contact')}>
-                {' '}
                 <FontAwesomeIcon icon={faPhone} />
-                Contatos
+                {t('header.contacts')}
               </li>
             </ul>
           </nav>
+          <MobileLanguageSelector>
+            <LanguageButton active={language === 'pt-BR'} onClick={() => setLanguage('pt-BR')}>
+              <img src="https://flagcdn.com/w40/br.png" alt="Português" />
+            </LanguageButton>
+            <LanguageButton active={language === 'en'} onClick={() => setLanguage('en')}>
+              <img src="https://flagcdn.com/w40/us.png" alt="English" />
+            </LanguageButton>
+          </MobileLanguageSelector>
         </MobileMenu>
       </MobileHeaderStyle>
     );
@@ -112,15 +133,15 @@ export const Header = () => {
               href={`#${HomePageLocalRoutes.TECNOLOGIES}`}
               onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.TECNOLOGIES}`)}
             >
-              Tecnologias
+              {t('header.tecnologies')}
             </a>
           </li>
           <li>
             <a
-              href={`#${HomePageLocalRoutes.COMPETENCIES}`}
-              onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.COMPETENCIES}`)}
+              href={`#${HomePageLocalRoutes.SKILLS}`}
+              onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.SKILLS}`)}
             >
-              Competências
+              {t('header.skills')}
             </a>
           </li>
           <li>
@@ -128,11 +149,21 @@ export const Header = () => {
               href={`#${HomePageLocalRoutes.PROJECTS}`}
               onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.PROJECTS}`)}
             >
-              Projetos
+              {t('header.projects')}
             </a>
           </li>
           <li>
-            <Link href="/contact">Contatos</Link>
+            <Link href="/contact"> {t('header.contacts')}</Link>
+          </li>
+          <li>
+            <LanguageSelector>
+              <LanguageButton active={language === 'pt-BR'} onClick={() => setLanguage('pt-BR')}>
+                <img src="https://flagcdn.com/w40/br.png" alt="Português" />
+              </LanguageButton>
+              <LanguageButton active={language === 'en'} onClick={() => setLanguage('en')}>
+                <img src="https://flagcdn.com/w40/us.png" alt="English" />
+              </LanguageButton>
+            </LanguageSelector>
           </li>
         </ul>
       </nav>

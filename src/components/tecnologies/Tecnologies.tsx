@@ -13,6 +13,7 @@ import {
 import { HomePageLocalRoutes } from '../header/Contract';
 import useBreakpoints from '@/hooks/useBreakpoints';
 import { useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 
 const tecnologies = [
   { icon: SiTypescript, hoverColor: '#3178C6', link: 'https://www.typescriptlang.org/', name: 'TypeScript' },
@@ -26,6 +27,7 @@ const tecnologies = [
 
 export const Tecnologies = () => {
   const { isMobile, isTablet } = useBreakpoints();
+  const t = useTranslations();
 
   const size = useMemo(() => {
     return isMobile || isTablet ? 25 : 50;
@@ -33,7 +35,7 @@ export const Tecnologies = () => {
 
   return (
     <TecnologiesWrapper id={HomePageLocalRoutes.TECNOLOGIES}>
-      <h2>Tecnologias</h2>
+      <h2>{t('tecnologies')}</h2>
       <Fade duration={750} direction="right">
         <TecnologiesList>
           {tecnologies.map((tech, index) => (

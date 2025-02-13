@@ -2,7 +2,6 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { HomePageLocalRoutes } from '../header/Contract';
-import { projects } from './contract';
 import {
   DetailsButton,
   ProjectDetailsContainer,
@@ -16,8 +15,14 @@ import {
 import { getProjectTime } from './utils';
 import { faCalendar, faCode, faCodeBranch, faLock } from '@fortawesome/free-solid-svg-icons';
 import { Fade } from 'react-awesome-reveal';
+import { useTranslations } from 'next-intl';
+import { useGetProjects } from '@/hooks/useGetProjects';
+import { useLanguageStore } from '@/stores/useLanguageStore';
 
 export const Projects = () => {
+  const t = useTranslations();
+  const { projects } = useGetProjects();
+  const { language } = useLanguageStore();
   return (
     <ProjectsWrapper id={HomePageLocalRoutes.PROJECTS}>
       <h2>Projetos</h2>
@@ -30,21 +35,27 @@ export const Projects = () => {
                 <h3>{project.title} </h3>
                 <ProjectLicense $isOpenSource={project.isOpenSource}>
                   <FontAwesomeIcon icon={project.isOpenSource ? faCodeBranch : faLock} />
-                  {project.isOpenSource ? 'Open Source' : 'Código Privado'}
+                  {project.isOpenSource ? t('project.openSource') : t('project.notOpenSource')}
                 </ProjectLicense>
                 <ProjectInfo>
                   <FontAwesomeIcon icon={faCode} />
                   <p>
-                    <b>Tecnologias: </b>
+                    <b>{t('project.tecnologies')} </b>
                     {project.tecnologies.join(', ')}.
                   </p>
                 </ProjectInfo>
                 <ProjectInfo>
                   <FontAwesomeIcon icon={faCalendar} />
-                  <p>{getProjectTime(project.initialDate, project.finalDate)}</p>
+                  <p>
+                    {getProjectTime({
+                      lang: language as 'pt-BR' | 'en',
+                      initialDate: project.initialDate,
+                      finalDate: project.finalDate,
+                    })}
+                  </p>
                 </ProjectInfo>
                 <DetailsButton onClick={() => {}} href={`/projects/${project.id}`}>
-                  Ver detalhes
+                  {t('project.openDetails')}
                 </DetailsButton>
               </ProjectDetailsContainer>
             </ProjectItem>

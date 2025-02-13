@@ -12,15 +12,17 @@ type Breakpoints = {
 
 const useBreakpoints = (): Breakpoints => {
   const [breakpoints, setBreakpoints] = useState<Breakpoints>({
-    isMobile: window.innerWidth < 480,
-    isTablet: window.innerWidth >= 480 && window.innerWidth < 768,
-    isDesktop: window.innerWidth >= 768 && window.innerWidth < 1024,
-    isLargeDesktop: window.innerWidth >= 1024,
-    is2K: window.innerWidth > 2560 && window.innerWidth <= 3840,
-    is4K: window.innerWidth > 3840,
+    isMobile: false,
+    isTablet: false,
+    isDesktop: false,
+    isLargeDesktop: false,
+    is2K: false,
+    is4K: false,
   });
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const handleResize = () => {
       const width = window.innerWidth;
       setBreakpoints({

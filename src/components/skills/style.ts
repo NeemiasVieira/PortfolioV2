@@ -1,7 +1,7 @@
 'use client';
 import styled from 'styled-components';
 
-export const CompetenciesWrapper = styled.div`
+export const SkillsWrapper = styled.div`
   margin-top: 50px;
   display: flex;
   flex-flow: column wrap;
@@ -17,7 +17,7 @@ export const CompetenciesWrapper = styled.div`
   }
 `;
 
-export const CompetenciesList = styled.ul`
+export const SkillsList = styled.ul`
   list-style: none;
   gap: 20px;
   display: grid;

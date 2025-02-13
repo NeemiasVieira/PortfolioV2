@@ -1,6 +1,6 @@
 export enum HomePageLocalRoutes {
   TECNOLOGIES = 'tecnologies',
-  COMPETENCIES = 'competencies',
+  SKILLS = 'skills',
   PROJECTS = 'projects',
   TOP = 'top',
 }

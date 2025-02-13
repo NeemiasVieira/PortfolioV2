@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 
 const useSmoothScroll = () => {
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const scrollToElement = (event: Event) => {
       event.preventDefault();
       const target = event.currentTarget as HTMLAnchorElement;

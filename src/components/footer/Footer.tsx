@@ -9,8 +9,10 @@ import {
   SocialLinksList,
 } from './style';
 import { socialLinksFooter } from './contract';
+import { useTranslations } from 'next-intl';
 
 export const Footer = () => {
+  const t = useTranslations();
   return (
     <FooterWrapper>
       <LogoAndSocialLinksContainer>
@@ -28,9 +30,9 @@ export const Footer = () => {
         </SocialLinksList>
       </LogoAndSocialLinksContainer>
       <EndContainer>
-        <span>Todos os direitos reservados © {new Date().getFullYear()}</span>
+        <span>{t('allRightsReserved', { year: new Date().getFullYear() })}</span>
         <span>
-          Hospedado pela{' '}
+          {t('poweredBy')}{' '}
           <a href="https://vercel.com" target="_blank">
             Vercel
           </a>

@@ -1,0 +1,86 @@
+{
+  "hello": "Hey, what's up? How's it going?",
+  "welcome": "Welcome to my portfolio",
+  "developerFullStack": "Full Stack Developer",
+  "resumeTitle": "Learn a little about me:",
+  "resume1": "Software Developer with {age} years old, graduating in Computer Engineering, part of the team at",
+  "resume2": ". Passionate about technology and problem-solving, I have solid experience in Web Development, working on professional, educational, and personal projects. Focused on delivering efficient solutions.",
+  "contactTitle": "Contacts",
+  "cvTitle": "Resume",
+  "cvActionLabel": "Open",
+  "tecnologies": "Technologies",
+  "skills": "Skills",
+  "allRightsReserved": "All rights reserved © {year}",
+  "poweredBy": "Hosted by",
+  "privateProjectInfo": {
+    "title": "Project protected by licensing and/or confidentiality agreements.",
+    "description": "Due to legal reasons, such as the LGPD (General Data Protection Law) and corporate privacy policies, the project view links and repositories are not available. The source code is proprietary and protected by specific licenses, ensuring the security and integrity of the information involved."
+  },
+  "project": {
+    "description": "Description: ",
+    "tecnologies": "Technologies: ",
+    "openSource": "Open Source",
+    "notOpenSource": "Private Code",
+    "openDetails": "View details",
+    "linkType": {
+      "repository": "Repository",
+      "project": "Project"
+    }
+  },
+  "header": {
+    "home": "Home",
+    "tecnologies": "Technologies",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contacts": "Contacts",
+    "language": "Language"
+  },
+  "projects": {
+    "dkpedras": {
+      "title": "Freelance Project: DK Pedras",
+      "description": "Freelance project: Development of a website for a store with a product catalog. Responsible for prototyping, design, implementation of features, and maintenance. I optimized image latency using Cloudinary with CDN for efficient loading, maximizing the resources of the free plan."
+    },
+    "nutrien": {
+      "title": "Digital Platform Nutrien",
+      "description": "Development of a management and retail platform for agricultural inputs, with an architecture based on microservices and micro frontends, in addition to an API Gateway. Responsible for task refinement, implementation of new features, bug fixes, integration with Microsoft Teams, processing of pricing spreadsheets in Excel and PDFs, and developing order negotiation flows, product catalog, and shopping cart."
+    },
+    "sms": {
+      "title": "Soil Monitoring System",
+      "description": "A project focused on controlling and taking care of domestic plants, using NPK, temperature, pH, light sensors, and image capture to evaluate the health of plants. It includes a modern digital platform for data analysis, charts, health reports, record history, PDF export, dark mode, and an admin panel for species parameterization, simulation mode, and other features."
+    },
+    "timekeeping": {
+      "title": "Timekeeping System",
+      "description": "Internal system for tracking worked hours."
+    },
+    "hospital": {
+      "title": "Data Transfer Between Healthcare Systems",
+      "description": "Development of integration between the medical systems Tasy and PEP, correlating events and data in a unified database. Implementation of a hexagonal architecture to optimize performance and communication between applications, along with the creation of unit tests to ensure system reliability."
+    }
+  },
+  "skillsList": {
+    "projectExperience": {
+      "title": "Participation in Over 5 Successful Projects",
+      "description": "Significant contributions to various high-complexity projects, both professional and academic, always focused on quality and results."
+    },
+    "technologyExpert": {
+      "title": "Expert in Cutting-Edge Technologies",
+      "description": "Expertise in React, TypeScript, Node.js, NestJS, PostgreSQL, MongoDB, among other high-performance tools and libraries, to create robust and scalable solutions."
+    },
+    "interpersonalSkills": {
+      "title": "Interpersonal Skills",
+      "description": "Advanced communication skills, with a focus on knowledge transfer, as well as persistence in solving complex problems. Ability to organize processes and promote a collaborative and productive work environment."
+    },
+    "clientExperience": {
+      "title": "Client and Business Experience",
+      "description": "Experience in various projects, including healthcare systems, time tracking, product catalogs, and the largest agricultural digital sales platform in Brazil."
+    },
+    "agileDevelopment": {
+      "title": "Agile Development and Efficiency",
+      "description": "Experience with agile methodologies such as Scrum and Kanban, optimizing the development process with a focus on quick and high-quality deliveries, including task refinement and timeline estimation."
+    },
+    "softwareArchitecture": {
+      "title": "Software Architecture and Best Practices",
+      "description": "Implementation of Clean Architecture, Clean Code, and scalable design practices, such as modular and hexagonal architecture, ensuring the longevity and maintainability of the code."
+    }
+  }
+}

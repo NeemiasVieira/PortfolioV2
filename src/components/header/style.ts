@@ -116,3 +116,39 @@ export const CloseMenuButton = styled.button`
     font-size: 1.5rem;
   }
 `;
+
+export const LanguageSelector = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+`;
+
+export const LanguageButton = styled.button<{ active: boolean }>`
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: ${({ active }) => (active ? 1 : 0.5)};
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  img {
+    aspect-ratio: 5/3;
+    width: 30px;
+    border-radius: 20%;
+    object-fit: cover;
+  }
+`;
+
+export const MobileLanguageSelector = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 10px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+`;

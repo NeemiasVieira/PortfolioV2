@@ -1,32 +1,44 @@
-export const getProjectTime = (startDate: Date, endDate?: Date): string => {
-  const startYear = startDate.getFullYear();
-  const startMonth = startDate.getMonth();
+type ProjectTimeParams = {
+  initialDate: Date;
+  finalDate?: Date;
+  lang: 'en' | 'pt-BR';
+};
 
-  if (!endDate) {
-    return `Data de início no projeto: ${String(startMonth + 1).padStart(2, '0')}/${startYear}`;
+export const getProjectTime = ({ initialDate, finalDate, lang }: ProjectTimeParams): string => {
+  const startYear = initialDate.getFullYear();
+  const startMonth = initialDate.getMonth();
+  if (!finalDate) {
+    return lang === 'en'
+      ? `Project start date: ${String(startMonth + 1).padStart(2, '0')}/${startYear}`
+      : `Data de início no projeto: ${String(startMonth + 1).padStart(2, '0')}/${startYear}`;
   }
 
-  if (endDate.getTime() < startDate.getTime()) {
-    return 'A data final deve ser posterior à data inicial.';
+  if (finalDate.getTime() < initialDate.getTime()) {
+    return lang === 'en'
+      ? 'The end date must be later than the start date.'
+      : 'A data final deve ser posterior à data inicial.';
   }
 
-  const endYear = endDate.getFullYear();
-  const endMonth = endDate.getMonth();
+  const endYear = finalDate.getFullYear();
+  const endMonth = finalDate.getMonth();
 
   const totalMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
 
   if (totalMonths < 1) {
-    return 'Tempo inferior a um mês';
+    return lang === 'en' ? 'Less than a month' : 'Tempo inferior a um mês';
   }
 
   const years = Math.floor(totalMonths / 12);
   const months = totalMonths % 12;
 
-  let result = 'Tempo no projeto: ';
-  if (years > 0) result += `${years} ano${years > 1 ? 's' : ''}`;
-  if (years > 0 && months > 0) result += ' e ';
-  const pluralMonths = months > 1;
-  if (months > 0) result += `${months} m${pluralMonths ? 'e' : 'ê'}s${pluralMonths ? 'es' : ''}`;
+  const projectDurationText = lang === 'en' ? 'Project duration: ' : 'Tempo no projeto: ';
+  const yearText = years === 1 ? (lang === 'en' ? 'year' : 'ano') : lang === 'en' ? 'years' : 'anos';
+  const monthText = months === 1 ? (lang === 'en' ? 'month' : 'mês') : lang === 'en' ? 'months' : 'meses';
+
+  let result = `${projectDurationText}`;
+  if (years > 0) result += `${years} ${yearText}`;
+  if (years > 0 && months > 0) result += ' and ';
+  if (months > 0) result += `${months} ${monthText}`;
 
   return result.trim();
 };
