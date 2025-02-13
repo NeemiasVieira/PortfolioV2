@@ -1,3 +1,4 @@
+'use client';
 import { create } from 'zustand';
 import ptBR from '../../public/locales/pt-BR.json';
 import en from '../../public/locales/en.json';

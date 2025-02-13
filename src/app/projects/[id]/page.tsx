@@ -2,6 +2,7 @@
 import { useParams } from 'next/navigation';
 import {
   Actions,
+  BackButton,
   LGPDWarn,
   ProjectContent,
   ProjectDetailsWrapper,
@@ -12,14 +13,27 @@ import {
 import { useMemo } from 'react';
 import { ProjectInfo, ProjectLicense } from '@/components/projects/style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAlignRight, faCircleInfo, faCode, faCodeBranch, faLock } from '@fortawesome/free-solid-svg-icons';
+import {
+  faAlignRight,
+  faArrowLeft,
+  faCircleInfo,
+  faCode,
+  faCodeBranch,
+  faLock,
+} from '@fortawesome/free-solid-svg-icons';
 import { useTranslations } from 'next-intl';
 import { useGetProjects } from '@/hooks/useGetProjects';
+import { useRouter } from 'next/navigation';
 
 const ProjectPage = () => {
   const { id } = useParams();
   const t = useTranslations();
   const { projects } = useGetProjects();
+  const router = useRouter();
+
+  const onBack = () => {
+    router.push('/');
+  };
 
   const project = useMemo(() => projects.find((project) => project.id === Number(id)), [id, projects]);
 
@@ -27,6 +41,10 @@ const ProjectPage = () => {
 
   return (
     <ProjectDetailsWrapper>
+      <BackButton onClick={onBack}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+        {t('back')}
+      </BackButton>
       <ProjectContent>
         <ProjectImage src={project.image ?? project.coverImage} alt={'Project image'} />
         <ProjectInformation>

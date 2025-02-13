@@ -29,7 +29,7 @@ export const Profile = () => {
   return (
     <ProfileWrapper>
       <ImageAndTitle>
-        <ProfileImage src={NeemiasImage} alt="Imagem do Neemias" />
+        <ProfileImage src={NeemiasImage} alt="Imagem do Neemias" priority />
         <h2 key={language}>
           <Typewriter
             options={{

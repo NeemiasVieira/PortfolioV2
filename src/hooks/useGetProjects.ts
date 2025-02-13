@@ -1,3 +1,4 @@
+'use client';
 import { useTranslations } from 'next-intl';
 import { IconDefinition, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';

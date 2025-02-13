@@ -1,3 +1,4 @@
+'use client';
 import { useTranslations } from 'next-intl';
 import { faGear, faCode, faUsers, faHandshake, faRunning, faBuilding } from '@fortawesome/free-solid-svg-icons';
 

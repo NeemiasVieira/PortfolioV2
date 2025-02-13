@@ -7,6 +7,7 @@ import { Footer } from '@/components/footer';
 import { useLanguageStore } from '@/stores/useLanguageStore';
 import { useEffect } from 'react';
 import { NextIntlClientProvider } from 'next-intl';
+import StyledComponentsRegistry from '@/lib/registry';
 
 const getCookie = (name: string) => {
   if (typeof document === 'undefined') return '';
@@ -41,13 +42,16 @@ export default function RootLayout({
         <title>Neemias Vieira</title>
         <meta name="description" content="Portfólio de Neemias Vieira" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-title" content="DevNeemias" />
       </head>
       <body className={montserrat.className}>
-        <NextIntlClientProvider messages={messages} locale={language} timeZone={timeZone}>
-          <Header />
-          {children}
-          <Footer />
-        </NextIntlClientProvider>
+        <StyledComponentsRegistry>
+          <NextIntlClientProvider messages={messages} locale={language} timeZone={timeZone}>
+            <Header />
+            {children}
+            <Footer />
+          </NextIntlClientProvider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

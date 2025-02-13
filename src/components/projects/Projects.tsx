@@ -23,6 +23,12 @@ export const Projects = () => {
   const t = useTranslations();
   const { projects } = useGetProjects();
   const { language } = useLanguageStore();
+
+  const memorizeScroll = () => {
+    sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+    sessionStorage.setItem('needScroll', true.toString());
+  };
+
   return (
     <ProjectsWrapper id={HomePageLocalRoutes.PROJECTS}>
       <h2>Projetos</h2>
@@ -54,7 +60,7 @@ export const Projects = () => {
                     })}
                   </p>
                 </ProjectInfo>
-                <DetailsButton onClick={() => {}} href={`/projects/${project.id}`}>
+                <DetailsButton onClick={memorizeScroll} href={`/projects/${project.id}`}>
                   {t('project.openDetails')}
                 </DetailsButton>
               </ProjectDetailsContainer>
