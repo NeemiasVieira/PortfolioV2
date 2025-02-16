@@ -5,9 +5,12 @@ import {
   HeaderStyle,
   LanguageButton,
   LanguageSelector,
+  MobileApplicationActions,
   MobileHeaderStyle,
   MobileLanguageSelector,
   MobileMenu,
+  MobileThemeSelector,
+  MobileTopMenuActions,
   ToggleMenuButton,
 } from './style';
 import { HomePageLocalRoutes } from './Contract';
@@ -20,19 +23,27 @@ import {
   faLaptopCode,
   faPeopleGroup,
   faPhone,
-  faXmarkSquare,
+  faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useLanguageStore } from '@/stores/useLanguageStore';
+import { ToggleThemeButton } from '../buttons/toggle-theme';
+import { useTheme } from '@/stores/useThemesStore';
 
 export const Header = () => {
+  //hooks
+  const t = useTranslations();
   const router = useRouter();
   const { isMobile, isTablet } = useBreakpoints();
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const t = useTranslations();
   const { language, setLanguage } = useLanguageStore();
+  const { theme } = useTheme();
+
+  //state
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  //functions
   const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -74,14 +85,32 @@ export const Header = () => {
             Dev<span>NeemiasVieira</span>
           </h1>
         </Link>
+
         <ToggleMenuButton onClick={toggleMenu}>
-          <FontAwesomeIcon icon={faBars} color="#fff" />
+          <FontAwesomeIcon icon={faBars} color={theme.colors.text} />
         </ToggleMenuButton>
 
         <MobileMenu $isMenuOpen={isMenuOpen}>
-          <CloseMenuButton onClick={toggleMenu}>
-            <FontAwesomeIcon icon={faXmarkSquare} color="#fff" />
-          </CloseMenuButton>
+          <MobileTopMenuActions>
+            <CloseMenuButton onClick={toggleMenu}>
+              <FontAwesomeIcon icon={faXmark} color={theme.colors.text} />
+            </CloseMenuButton>
+
+            <MobileApplicationActions>
+              <MobileThemeSelector>
+                <ToggleThemeButton />
+              </MobileThemeSelector>
+              <MobileLanguageSelector>
+                <LanguageButton $active={language === 'pt-BR'} onClick={() => setLanguage('pt-BR')}>
+                  <img src="https://flagcdn.com/w40/br.png" alt="Português" />
+                </LanguageButton>
+                <LanguageButton $active={language === 'en'} onClick={() => setLanguage('en')}>
+                  <img src="https://flagcdn.com/w40/us.png" alt="English" />
+                </LanguageButton>
+              </MobileLanguageSelector>
+            </MobileApplicationActions>
+          </MobileTopMenuActions>
+
           <nav>
             <ul>
               <li onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.TOP}`)}>
@@ -106,14 +135,6 @@ export const Header = () => {
               </li>
             </ul>
           </nav>
-          <MobileLanguageSelector>
-            <LanguageButton $active={language === 'pt-BR'} onClick={() => setLanguage('pt-BR')}>
-              <img src="https://flagcdn.com/w40/br.png" alt="Português" />
-            </LanguageButton>
-            <LanguageButton $active={language === 'en'} onClick={() => setLanguage('en')}>
-              <img src="https://flagcdn.com/w40/us.png" alt="English" />
-            </LanguageButton>
-          </MobileLanguageSelector>
         </MobileMenu>
       </MobileHeaderStyle>
     );
@@ -154,6 +175,9 @@ export const Header = () => {
           </li>
           <li>
             <Link href="/contact"> {t('header.contacts')}</Link>
+          </li>
+          <li>
+            <ToggleThemeButton />
           </li>
           <li>
             <LanguageSelector>

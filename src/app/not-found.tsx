@@ -36,14 +36,12 @@ export const NotFoundAlertContainer = styled.div`
   button {
     font-size: 1.2rem;
     background-color: transparent;
-    border: none;
-    -webkit-box-shadow: 2px -1px 25px -6px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 2px -1px 25px -6px rgba(0, 0, 0, 0.75);
-    box-shadow: 2px -1px 25px -6px rgba(0, 0, 0, 0.75);
-    background-color: #222;
+    box-shadow: ${({ theme }) => theme.shadows.default};
+    background-color: ${({ theme }) => theme.colors.element};
+    border: solid ${({ theme }) => theme.colors.border} 1px;
     padding: 10px;
     border-radius: 8px;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.text};
     margin-top: 20px;
     cursor: pointer;
     transition: transform 200ms ease-in-out;

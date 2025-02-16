@@ -1,7 +1,13 @@
-import { faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faInstagram, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 export const socialLinksFooter = [
+  {
+    link: 'https://github.com/NeemiasVieira/',
+    icon: faGithub,
+    hoverColor: '#6e5494',
+    name: 'Github',
+  },
   {
     link: 'https://www.linkedin.com/in/neemiasvieira/',
     icon: faLinkedin,

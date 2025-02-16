@@ -5,7 +5,8 @@
   "resumeTitle": "Learn a little about me:",
   "resume1": "Software Developer with {age} years old, graduating in Computer Engineering, part of the team at",
   "resume2": ". Passionate about technology and problem-solving, I have solid experience in Web Development, working on professional, educational, and personal projects. Focused on delivering efficient solutions.",
-  "contactTitle": "Contacts",
+  "contacts": "Contacts",
+  "connectWithMe": "Connect with me",
   "cvTitle": "Resume",
   "cvActionLabel": "Open",
   "tecnologies": "Technologies",
@@ -14,8 +15,8 @@
   "poweredBy": "Hosted by",
   "back": "Back",
   "pageNotFound": {
-    "buttonLabel": "Voltar para o início",
-    "title": "Página não encontrada"
+    "buttonLabel": "Back to home",
+    "title": "Page not found"
   },
   "privateProjectInfo": {
     "title": "Project protected by licensing and/or confidentiality agreements.",

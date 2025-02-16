@@ -68,6 +68,7 @@ export const useGetProjects = () => {
         'TypeScript',
         'Node',
         'GraphQL',
+        'LaunchDarkly',
         'Mikro-ORM',
         'PostgreSQL',
         'Docker',
@@ -95,6 +96,7 @@ export const useGetProjects = () => {
         'TensorFlow',
       ],
       coverImage: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1739129069/sms-cover-image_d6qazf.png',
+      image: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1739670688/sms-print_qnwnwa.png',
       links: [
         {
           link: 'https://sms.devneemiasvieira.com',
@@ -126,7 +128,7 @@ export const useGetProjects = () => {
       initialDate: Data(9, 2023),
       finalDate: Data(12, 2023),
       tecnologies: ['Java', 'Quarkus', 'Kafka', 'Docker', 'MongoDB'],
-      coverImage: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1739129334/mv_ndauqt.jpg',
+      coverImage: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1739670374/mv_lojaaz.png',
     },
   ];
 

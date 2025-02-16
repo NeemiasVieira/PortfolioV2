@@ -28,9 +28,16 @@ export const SkillsList = styled.ul`
   @media screen and (max-width: 1023px) {
     max-width: none;
   }
+  @media screen and (max-width: 480px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    width: 85%;
+  }
 `;
 
-export const CompetencieItem = styled.li`
+export const SkillItem = styled.li`
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -50,17 +57,17 @@ export const CompetencieItem = styled.li`
   }
 
   @media screen and (max-width: 1023px) {
-    width: 90%;
-
     svg {
       font-size: 1.5rem;
     }
 
     h3 {
       font-size: 1rem;
+      width: 100%;
     }
     p {
       font-size: 0.9rem;
+      width: 100%;
     }
   }
 `;

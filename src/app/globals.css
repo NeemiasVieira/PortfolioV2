@@ -1,17 +1,3 @@
-:root {
-  --background: #1b1b1b;
-  --foreground: #fff;
-  --primary-color: rgb(70, 170, 200);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --primary-color: rgb(70, 170, 200);
-  }
-}
-
 html,
 body {
   max-width: 100vw;
@@ -19,26 +5,10 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
-}
-
-body::-webkit-scrollbar {
-  width: 15px;
-}
-
-body::-webkit-scrollbar-track {
-  background: #222;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-  border-radius: 6px;
-  border: solid #000 2.5px;
 }
 * {
   box-sizing: border-box;
@@ -49,10 +19,4 @@ body::-webkit-scrollbar-thumb {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: light) {
-  html {
-    color-scheme: dark;
-  }
 }

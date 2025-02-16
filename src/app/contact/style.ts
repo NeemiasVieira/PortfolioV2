@@ -5,16 +5,21 @@ export const ContactsWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
-  min-height: 100vh;
+  min-height: 90vh;
   gap: 50px;
   width: 100%;
+  margin-top: 70px;
+
+  h1 {
+    margin: 0;
+  }
 
   @media screen and (max-width: 1023px) {
     margin-top: 70px;
     justify-content: start;
 
     h1 {
-      margin-top: 40px;
+      margin: 30px 0 0 0;
     }
   }
 `;
@@ -25,7 +30,7 @@ export const ContactList = styled.ul`
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
-  gap: 40px;
+  gap: 30px;
   width: 100%;
 
   @media screen and (max-width: 1023px) {
@@ -47,12 +52,12 @@ export const ContactItem = styled.li<{ $hoverColor: string }>`
     gap: 12px;
     width: 100%;
     font-size: 1.4rem;
-    background-color: #222;
+    background-color: ${({ theme }) => theme.colors.element};
     padding: 20px;
     border-radius: 12px;
-    -webkit-box-shadow: 2px -1px 25px -6px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 2px -1px 25px -6px rgba(0, 0, 0, 0.75);
-    box-shadow: 2px -1px 25px -6px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: ${({ theme }) => theme.shadows.default};
+    -moz-box-shadow: ${({ theme }) => theme.shadows.default};
+    box-shadow: ${({ theme }) => theme.shadows.default};
     transition: all 300ms;
   }
 

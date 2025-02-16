@@ -21,11 +21,11 @@ export const LogoAndSocialLinksContainer = styled.div`
 
 export const DevNeemiasVieiraLogo = styled.span`
   font-weight: 700;
-  color: var(--primary-color);
+  color: ${({ theme }) => theme.colors.primary};
   font-size: 2rem;
 
   b {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.text};
   }
 
   @media screen and (max-width: 1080px) {
@@ -79,12 +79,13 @@ export const EndContainer = styled.div`
   align-items: center;
   flex-flow: column wrap;
   gap: 10px;
-  color: #7a878d;
-  border-top: solid 1px #7a878d;
+  color: ${({ theme }) => theme.colors.textSecondary};
+  border-top: solid 1px ${({ theme }) => theme.colors.textSecondary};
   padding-top: 20px;
   width: 100%;
   a {
-    color: var(--primary-color);
+    color: ${({ theme }) => theme.colors.primary};
+    font-weight: 600;
   }
 
   @media screen and (max-width: 1080px) {

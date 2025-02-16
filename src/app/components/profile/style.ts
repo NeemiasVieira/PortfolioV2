@@ -39,8 +39,8 @@ export const ImageAndTitle = styled.div`
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 0 20px 2px var(--primary-color);
-    animation: fadeInOut 2s infinite;
+    box-shadow: 0 0 25px 1.5px ${({ theme }) => theme.colors.primary};
+    animation: fadeInOut 1.8s infinite;
   }
 
   @media screen and (max-width: 1023px) {
@@ -56,13 +56,13 @@ export const ImageAndTitle = styled.div`
 
   @keyframes fadeInOut {
     0% {
-      opacity: 1;
-    }
-    50% {
       opacity: 0;
     }
-    100% {
+    50% {
       opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 `;
@@ -108,6 +108,7 @@ export const SocialLinks = styled.div`
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 8px;
+    white-space: nowrap;
   }
 
   @media screen and (max-width: 1023px) {
@@ -137,7 +138,7 @@ export const SocialLinkItem = styled.li<{ $hoverColor: string }>`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    background-color: ${({ theme }) => theme.colors.element};
     padding: 15px;
     border-radius: 100%;
     transition: transform 200ms ease;
@@ -145,13 +146,12 @@ export const SocialLinkItem = styled.li<{ $hoverColor: string }>`
   }
 
   svg {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.text};
     font-size: 2rem;
     transition: color 200ms ease;
   }
 
   &:hover {
-    background-color: #111;
     transform: scale(1.1);
     svg {
       color: ${({ $hoverColor }) => $hoverColor};
@@ -225,10 +225,10 @@ export const CvContainer = styled.div`
     margin-bottom: 8px;
   }
   a {
-    background-color: #111;
-    color: #fff;
+    background-color: ${({ theme }) => theme.colors.element};
+    color: ${({ theme }) => theme.colors.text};
     padding: 15px;
-    border: solid #000 1px;
+    border: solid ${({ theme }) => theme.colors.border} 1px;
     border-radius: 12px;
     font-weight: 700;
     cursor: pointer;
@@ -269,7 +269,7 @@ export const DecorativeIcon = styled(FontAwesomeIcon)<{
   $top?: string;
   $bottom?: string;
 }>`
-  color: rgb(122, 135, 141);
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 5rem;
   position: absolute;
   left: ${(props) => props.$left};

@@ -8,7 +8,7 @@ const Contact = () => {
   const t = useTranslations();
   return (
     <ContactsWrapper>
-      <h1>{t('contactTitle')}</h1>
+      <h1>{t('contacts')}</h1>
       <ContactList>
         {socialLinksFooter.map((item) => (
           <ContactItem key={item.link} $hoverColor={item.hoverColor}>

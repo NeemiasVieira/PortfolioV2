@@ -37,7 +37,7 @@ export const getProjectTime = ({ initialDate, finalDate, lang }: ProjectTimePara
 
   let result = `${projectDurationText}`;
   if (years > 0) result += `${years} ${yearText}`;
-  if (years > 0 && months > 0) result += ' and ';
+  if (years > 0 && months > 0) result += lang === 'en' ? ' and ' : ' e ';
   if (months > 0) result += `${months} ${monthText}`;
 
   return result.trim();

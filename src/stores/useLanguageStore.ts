@@ -13,22 +13,22 @@ const getCookie = (name: string) => {
 
 type LanguageState = {
   language: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  messages: Record<string, any>;
   setLanguage: (language: string) => void;
 };
 
-const languageStore = create<LanguageState>((set) => ({
-  language: getCookie('locale') || 'pt-BR',
-  setLanguage: (language) => {
-    document.cookie = `locale=${language}; path=/; max-age=${60 * 60 * 24 * 365}`;
-    set({ language });
-  },
-}));
+export const useLanguageStore = create<LanguageState>((set) => {
+  const initialLang = getCookie('locale') || 'pt-BR';
 
-export const useLanguageStore = () => {
-  const store = languageStore();
-  const messages = store.language === 'en' ? en : ptBR;
   return {
-    messages,
-    ...store,
+    language: initialLang,
+    messages: initialLang === 'en' ? en : ptBR,
+    setLanguage: (language) => {
+      if (typeof document !== 'undefined') {
+        document.cookie = `locale=${language}; path=/; max-age=${60 * 60 * 24 * 365}`;
+      }
+      set({ language, messages: language === 'en' ? en : ptBR });
+    },
   };
-};
+});

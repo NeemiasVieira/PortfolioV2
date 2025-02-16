@@ -58,7 +58,7 @@ export const TecnologyItem = styled.div<{ $hoverColor: string }>`
   align-items: center;
   transition: color 250ms;
   flex-flow: column wrap;
-  color: rgb(122, 135, 141);
+  color: ${({ theme }) => theme.colors.textSecondary};
 
   &:hover {
     color: ${({ $hoverColor }) => $hoverColor};
@@ -70,14 +70,14 @@ export const TecnologyItem = styled.div<{ $hoverColor: string }>`
 
   span {
     margin-top: 5px;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.text};
     transition: color 250ms;
   }
 
   @media screen and (max-width: 1023px) {
     span {
       margin: 0;
-      color: #fff;
+      color: ${({ theme }) => theme.colors.text};
     }
 
     color: ${({ $hoverColor }) => $hoverColor};

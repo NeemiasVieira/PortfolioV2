@@ -10,7 +10,7 @@ import {
   SiPostgresql,
   SiAmazonwebservices,
 } from 'react-icons/si';
-import { HomePageLocalRoutes } from '../header/Contract';
+import { HomePageLocalRoutes } from '../../../components/header/Contract';
 import useBreakpoints from '@/hooks/useBreakpoints';
 import { useMemo } from 'react';
 import { useTranslations } from 'next-intl';

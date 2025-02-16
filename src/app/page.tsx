@@ -1,11 +1,11 @@
 'use client';
-import { Profile } from '@/components/profile';
-import { Tecnologies } from '@/components/tecnologies';
+import { Profile } from '@/app/components/profile';
+import { Tecnologies } from '@/app/components/tecnologies';
 import { HomePageWrapper } from './style';
 import useSmoothScroll from '@/hooks/useSmoothScroll';
-import { Projects } from '@/components/projects';
+import { Projects } from '@/app/components/projects';
 import { HomePageLocalRoutes } from '@/components/header/Contract';
-import { Skills } from '@/components/skills';
+import { Skills } from '@/app/components/skills';
 import { usePreserveScroll } from '@/hooks/usePreserveScroll';
 
 const App = () => {

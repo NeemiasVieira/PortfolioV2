@@ -11,7 +11,7 @@ import {
   ProjectLink,
 } from './style';
 import { useMemo } from 'react';
-import { ProjectInfo, ProjectLicense } from '@/components/projects/style';
+import { ProjectInfo, ProjectLicense } from '@/app/components/projects/style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faAlignRight,
@@ -54,13 +54,13 @@ const ProjectPage = () => {
             {project.isOpenSource ? t('project.openSource') : t('project.notOpenSource')}
           </ProjectLicense>
           <ProjectInfo>
-            <FontAwesomeIcon icon={faAlignRight} />
+            <FontAwesomeIcon icon={faAlignRight} size="xl" />
             <p>
               <b>{t('project.description')}</b> {project.description}
             </p>
           </ProjectInfo>
           <ProjectInfo>
-            <FontAwesomeIcon icon={faCode} />
+            <FontAwesomeIcon icon={faCode} size="xl" />
             <p>
               <b>{t('project.tecnologies')} </b>
               {project.tecnologies.join(', ')}.
@@ -69,8 +69,7 @@ const ProjectPage = () => {
           {!project.links && !project.isOpenSource && (
             <LGPDWarn>
               <div className="titleAndIcon">
-                {' '}
-                <FontAwesomeIcon icon={faCircleInfo} />
+                <FontAwesomeIcon icon={faCircleInfo} size="xl" />
                 <strong>{t('privateProjectInfo.title')}</strong>
               </div>
 

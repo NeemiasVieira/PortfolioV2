@@ -1,7 +1,7 @@
 'use client';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { HomePageLocalRoutes } from '../header/Contract';
+import { HomePageLocalRoutes } from '../../../components/header/Contract';
 import {
   DetailsButton,
   ProjectDetailsContainer,

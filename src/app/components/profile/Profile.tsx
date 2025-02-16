@@ -14,7 +14,7 @@ import {
   SocialLinksList,
   Texts,
 } from './style';
-import NeemiasImage from '../../assets/images/neemias.png';
+import NeemiasImage from '../../../assets/images/neemias.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { socialLinks } from './contract';
 import { faCode, faCodeBranch, faDatabase, faFileLines, faRocket } from '@fortawesome/free-solid-svg-icons';
@@ -34,11 +34,17 @@ export const Profile = () => {
           <Typewriter
             options={{
               loop: true,
-              delay: 50,
-              deleteSpeed: 1000,
+              delay: 60,
             }}
             onInit={(typewriter) => {
-              typewriter.typeString(t('developerFullStack')).pauseFor(2000).deleteAll().start();
+              typewriter
+                .typeString('Neemias Vieira')
+                .pauseFor(1000)
+                .deleteAll(15)
+                .typeString(t('developerFullStack'))
+                .pauseFor(7000)
+                .deleteAll(25)
+                .start();
             }}
           />
         </h2>
@@ -69,7 +75,7 @@ export const Profile = () => {
           </Texts>
           <Actions>
             <SocialLinks>
-              <h3>{t('contactTitle')}</h3>
+              <h3>{t('connectWithMe')}</h3>
               <SocialLinksList>
                 {socialLinks.map(({ hoverColor, icon, link }) => (
                   <SocialLinkItem $hoverColor={hoverColor} key={link}>
