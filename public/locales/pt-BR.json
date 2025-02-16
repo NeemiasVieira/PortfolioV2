@@ -42,6 +42,7 @@
     "language": "Idioma"
   },
   "projects": {
+    "title": "Projetos",
     "dkpedras": {
       "title": "Projeto DK Pedras",
       "description": "Projeto Freelance: Desenvolvimento de site para loja com catálogo de produtos. Responsável por prototipação, design, implementação de funcionalidades e manutenção. Otimizei a latência das imagens utilizando o Cloudinary com CDN para carregamento eficiente, maximizando recursos do plano gratuito."

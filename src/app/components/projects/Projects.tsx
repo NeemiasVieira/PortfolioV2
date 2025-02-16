@@ -31,7 +31,7 @@ export const Projects = () => {
 
   return (
     <ProjectsWrapper id={HomePageLocalRoutes.PROJECTS}>
-      <h2>Projetos</h2>
+      <h2>{t('projects.title')}</h2>
       <ProjectList>
         {projects.map((project) => (
           <Fade duration={700} direction="right" key={project.id}>
