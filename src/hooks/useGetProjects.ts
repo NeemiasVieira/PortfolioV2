@@ -4,7 +4,7 @@ import { IconDefinition, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 
 export interface Project {
-  id: number;
+  id: string;
   title: string;
   description: string;
   isOpenSource: boolean;
@@ -39,7 +39,7 @@ export const useGetProjects = () => {
 
   const projects: Project[] = [
     {
-      id: 1,
+      id: 'dk-pedras-e-marmores',
       title: t('projects.dkpedras.title'),
       description: t('projects.dkpedras.description'),
       isOpenSource: false,
@@ -56,7 +56,7 @@ export const useGetProjects = () => {
       ],
     },
     {
-      id: 2,
+      id: 'digital-nutrien',
       title: t('projects.nutrien.title'),
       description: t('projects.nutrien.description'),
       isOpenSource: false,
@@ -76,7 +76,7 @@ export const useGetProjects = () => {
       ],
     },
     {
-      id: 3,
+      id: 'sistema-de-monitoramento-do-solo',
       title: t('projects.sms.title'),
       description: t('projects.sms.description'),
       isOpenSource: true,
@@ -111,17 +111,18 @@ export const useGetProjects = () => {
       ],
     },
     {
-      id: 4,
+      id: 'time-keeping',
       title: t('projects.timekeeping.title'),
       description: t('projects.timekeeping.description'),
       isOpenSource: false,
       initialDate: Data(1, 2024),
       finalDate: Data(3, 2024),
       tecnologies: ['Angular', 'TypeScript', 'Material-UI', 'SQL Server'],
-      coverImage: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1739129148/modalgr_f5pssd.jpg',
+      coverImage: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1746150417/mosten_plc5kr.jpg',
+      image: 'https://res.cloudinary.com/dnsc6qj4i/image/upload/v1746151785/mostem-capa_nb7nzr.jpg',
     },
     {
-      id: 5,
+      id: 'mv-sync-data-transfer-service',
       title: t('projects.hospital.title'),
       description: t('projects.hospital.description'),
       isOpenSource: false,

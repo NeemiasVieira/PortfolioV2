@@ -19,7 +19,7 @@ export const Footer = () => {
       <FooterContainer>
         <LogoAndSocialLinksContainer>
           <DevNeemiasVieiraLogo>
-            <b>Dev</b>NeemiasVieira
+            <span>Dev</span>NeemiasVieira
           </DevNeemiasVieiraLogo>
           <SocialLinksList>
             {socialLinksFooter.map((item, index) => (

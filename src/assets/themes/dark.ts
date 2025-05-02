@@ -8,7 +8,7 @@ export const darkTheme: ThemeType = {
     background: '#1b1b1b', // Fundo principal da aplicação
     element: '#222', // Elementos de fundo (cartões, botões, inputs)
     elementHover: '#333', // Hover para elementos de fundo
-    border: '#000', // Borda para elementos contrastantes
+    border: '#111', // Borda para elementos contrastantes
     success: '#00C853', // Verde para sucesso/mensagens positivas
     error: '#ff3300', // Vermelho para erros/alertas
     toggleBackground: '#444', // Cor do fundo do switch quando desligado

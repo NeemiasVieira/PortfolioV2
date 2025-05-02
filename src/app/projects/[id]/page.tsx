@@ -24,6 +24,7 @@ import {
 import { useTranslations } from 'next-intl';
 import { useGetProjects } from '@/hooks/useGetProjects';
 import { useRouter } from 'next/navigation';
+import NotFoundPage from '@/app/not-found';
 
 const ProjectPage = () => {
   const { id } = useParams();
@@ -35,9 +36,9 @@ const ProjectPage = () => {
     router.push('/');
   };
 
-  const project = useMemo(() => projects.find((project) => project.id === Number(id)), [id, projects]);
+  const project = useMemo(() => projects.find((project) => project.id === id), [id, projects]);
 
-  if (!project) return;
+  if (!project) return <NotFoundPage />;
 
   return (
     <ProjectDetailsWrapper>

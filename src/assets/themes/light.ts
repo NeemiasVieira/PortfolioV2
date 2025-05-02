@@ -8,7 +8,7 @@ export const lightTheme: ThemeType = {
     background: '#f5f5f5', // Fundo principal da aplicação
     element: '#e5e5e5', // Elementos de fundo (cartões, botões, inputs)
     elementHover: '#e6e6e6', // Hover para elementos de fundo
-    border: '#d1d1d1', // Bordas suaves
+    border: '#dfdfdf', // Bordas suaves
     success: '#00A043', // Verde um pouco mais escuro para manter o contraste
     error: '#cc2900', // Vermelho mais fechado para melhor legibilidade
     toggleBackground: '#ddd', // Cor do fundo do switch quando desligado

@@ -82,7 +82,7 @@ export const ProjectDetailsContainer = styled.div`
     margin-top: 10px;
   }
   display: flex;
-  gap: 10px;
+  gap: 5px;
   flex-flow: column wrap;
 
   @media screen and (max-width: 550px) {

@@ -20,11 +20,13 @@ import { socialLinks } from './contract';
 import { faCode, faCodeBranch, faDatabase, faFileLines, faRocket } from '@fortawesome/free-solid-svg-icons';
 import { useTranslations } from 'next-intl';
 import { useLanguageStore } from '@/stores/useLanguageStore';
+import { useThemeStore } from '@/stores/useThemesStore';
 
 export const Profile = () => {
   const age = new Date().getFullYear() - 1999 - (new Date() < new Date(`11-23-${new Date().getFullYear()}`) ? 1 : 0);
   const t = useTranslations();
   const { language } = useLanguageStore();
+  const { selectedTheme } = useThemeStore();
 
   return (
     <ProfileWrapper>
@@ -64,10 +66,9 @@ export const Profile = () => {
             <h4>{t('resumeTitle')}</h4>
             <p>
               {t('resume1', { age })}{' '}
-              <a href="https://modalgr.io/" target="_blank">
+              <a href="https://mosten.com/" target="_blank">
                 <b>
-                  <span style={{ color: ' rgb(48, 119, 171)' }}>Modal</span>
-                  <span style={{ color: 'rgb(254, 122, 0)' }}>GR</span>
+                  <span style={{ color: selectedTheme === 'light' ? '#602CB5' : '#CA6BF3' }}>Mosten</span>
                 </b>
               </a>
               {t('resume2')}

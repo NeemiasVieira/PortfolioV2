@@ -24,7 +24,7 @@ export const DevNeemiasVieiraLogo = styled.span`
   color: ${({ theme }) => theme.colors.primary};
   font-size: 2rem;
 
-  b {
+  span {
     color: ${({ theme }) => theme.colors.text};
   }
 

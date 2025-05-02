@@ -6,9 +6,9 @@ export const ContactsWrapper = styled.div`
   align-items: center;
   flex-flow: column wrap;
   min-height: 90vh;
-  gap: 50px;
+  gap: 30px;
   width: 100%;
-  margin-top: 70px;
+  margin-top: 50px;
 
   h1 {
     margin: 0;
@@ -30,7 +30,7 @@ export const ContactList = styled.ul`
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
-  gap: 30px;
+  gap: 25px;
   width: 100%;
 
   @media screen and (max-width: 1023px) {
@@ -53,7 +53,7 @@ export const ContactItem = styled.li<{ $hoverColor: string }>`
     width: 100%;
     font-size: 1.4rem;
     background-color: ${({ theme }) => theme.colors.element};
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px;
     -webkit-box-shadow: ${({ theme }) => theme.shadows.default};
     -moz-box-shadow: ${({ theme }) => theme.shadows.default};

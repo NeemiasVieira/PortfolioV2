@@ -59,6 +59,7 @@ export const TecnologyItem = styled.div<{ $hoverColor: string }>`
   transition: color 250ms;
   flex-flow: column wrap;
   color: ${({ theme }) => theme.colors.textSecondary};
+  white-space: nowrap;
 
   &:hover {
     color: ${({ $hoverColor }) => $hoverColor};
