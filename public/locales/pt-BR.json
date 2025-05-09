@@ -35,11 +35,15 @@
   },
   "header": {
     "home": "Início",
+    "certifications": "Certificações",
     "tecnologies": "Tecnologias",
     "skills": "Habilidades",
     "projects": "Projetos",
     "contacts": "Contatos",
     "language": "Idioma"
+  },
+  "certification": {
+    "link": "Visualizar"
   },
   "projects": {
     "title": "Projetos",

@@ -7,6 +7,7 @@ import { Projects } from '@/app/components/projects';
 import { HomePageLocalRoutes } from '@/components/header/Contract';
 import { Skills } from '@/app/components/skills';
 import { usePreserveScroll } from '@/hooks/usePreserveScroll';
+import { Certifications } from './components/certifications';
 
 const App = () => {
   useSmoothScroll();
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <HomePageWrapper id={HomePageLocalRoutes.TOP}>
       <Profile />
+      <Certifications />
       <Tecnologies />
       <Skills />
       <Projects />

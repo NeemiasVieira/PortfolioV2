@@ -19,6 +19,7 @@ import { useRouter } from 'next/navigation';
 import useBreakpoints from '@/hooks/useBreakpoints';
 import {
   faBars,
+  faCertificate,
   faCode,
   faHome,
   faLaptopCode,
@@ -118,6 +119,10 @@ export const Header = () => {
                 <FontAwesomeIcon icon={faHome} />
                 <a href={`#${HomePageLocalRoutes.TOP}`}>{t('header.home')}</a>
               </li>
+              <li onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.CERTIFICATIONS}`)}>
+                <FontAwesomeIcon icon={faCertificate} />
+                <a href={`#${HomePageLocalRoutes.CERTIFICATIONS}`}>{t('header.certifications')}</a>
+              </li>
               <li onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.TECNOLOGIES}`)}>
                 <FontAwesomeIcon icon={faCode} />
                 <a href={`#${HomePageLocalRoutes.TECNOLOGIES}`}>{t('header.tecnologies')}</a>
@@ -150,6 +155,14 @@ export const Header = () => {
       </Link>
       <nav>
         <ul>
+          <li>
+            <a
+              href={`#${HomePageLocalRoutes.CERTIFICATIONS}`}
+              onClick={(e) => handleNavigation(e, `#${HomePageLocalRoutes.CERTIFICATIONS}`)}
+            >
+              {t('header.certifications')}
+            </a>
+          </li>
           <li>
             <a
               href={`#${HomePageLocalRoutes.TECNOLOGIES}`}

@@ -37,7 +37,7 @@ export const ProjectItem = styled.li`
   display: flex;
   flex-flow: row nowrap;
   padding: 10px;
-  box-shadow: ${({ theme }) => theme.shadows.default};
+  box-shadow: ${({ theme }) => theme.shadows.light};
   border-radius: 10px;
   width: 450px;
   gap: 25px;

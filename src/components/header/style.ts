@@ -18,8 +18,8 @@ export const HeaderStyle = styled.header`
   color: ${({ theme }) => theme.colors.text};
   background-color: ${({ theme }) => theme.colors.background};
   box-shadow: ${({ theme }) => theme.shadows.light};
+  padding: 0 40px;
   h1 {
-    margin-left: 50px;
     color: ${({ theme }) => theme.colors.text};
     span {
       color: ${({ theme }) => theme.colors.primary};
@@ -33,8 +33,7 @@ export const HeaderStyle = styled.header`
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 20px;
-    margin-right: 50px;
+    gap: 15px;
     height: 100%;
   }
 

@@ -35,11 +35,15 @@
   },
   "header": {
     "home": "Home",
+    "certifications": "Certifications",
     "tecnologies": "Technologies",
     "skills": "Skills",
     "projects": "Projects",
     "contacts": "Contacts",
     "language": "Language"
+  },
+  "certification": {
+    "link": "View"
   },
   "projects": {
     "title": "Projects",
