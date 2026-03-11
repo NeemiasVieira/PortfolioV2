@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
   display: flex;
@@ -21,11 +21,11 @@ export const LogoAndSocialLinksContainer = styled.div`
 
 export const DevNeemiasVieiraLogo = styled.span`
   font-weight: 700;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.text};
   font-size: 2rem;
 
   span {
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.primary};
   }
 
   @media screen and (max-width: 1080px) {

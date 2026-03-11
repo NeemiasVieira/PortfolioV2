@@ -1,5 +1,5 @@
-'use client';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+"use client";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   DevNeemiasVieiraLogo,
   EndContainer,
@@ -8,19 +8,19 @@ import {
   LogoAndSocialLinksContainer,
   SocialLinkItem,
   SocialLinksList,
-} from './style';
-import { socialLinksFooter } from './contract';
-import { useTranslations } from 'next-intl';
+} from "./style";
+import { socialLinksFooter } from "./contract";
+import { useTranslations } from "next-intl";
 
 export const Footer = () => {
   const t = useTranslations();
   return (
     <FooterWrapper>
       <FooterContainer>
-        <LogoAndSocialLinksContainer>
-          <DevNeemiasVieiraLogo>
-            <span>Dev</span>NeemiasVieira
-          </DevNeemiasVieiraLogo>
+          <LogoAndSocialLinksContainer>
+            <DevNeemiasVieiraLogo>
+              Dev<span>NeemiasVieira</span>
+            </DevNeemiasVieiraLogo>
           <SocialLinksList>
             {socialLinksFooter.map((item, index) => (
               <SocialLinkItem $hoverColor={item.hoverColor} key={index}>
@@ -32,9 +32,9 @@ export const Footer = () => {
           </SocialLinksList>
         </LogoAndSocialLinksContainer>
         <EndContainer>
-          <span>{t('allRightsReserved', { year: new Date().getFullYear() })}</span>
+          <span>{t("allRightsReserved", { year: new Date().getFullYear() })}</span>
           <span>
-            {t('poweredBy')}{' '}
+            {t("poweredBy")}{" "}
             <a href="https://vercel.com" target="_blank">
               Vercel
             </a>

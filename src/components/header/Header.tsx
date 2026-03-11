@@ -15,7 +15,7 @@ import {
   ToggleMenuButton,
 } from './style';
 import { HomePageLocalRoutes } from './Contract';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import useBreakpoints from '@/hooks/useBreakpoints';
 import {
   faBars,
@@ -38,6 +38,7 @@ export const Header = () => {
   //hooks
   const t = useTranslations();
   const router = useRouter();
+  const pathname = usePathname();
   const { isMobile, isTablet } = useBreakpoints();
   const { language, setLanguage } = useLanguageStore();
   const { theme } = useTheme();
@@ -78,6 +79,10 @@ export const Header = () => {
       router.push(route);
     }
   };
+
+  if (pathname?.includes('/dental-landing')) {
+    return null;
+  }
 
   if (isMobile || isTablet) {
     return (

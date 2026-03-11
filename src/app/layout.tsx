@@ -1,15 +1,15 @@
-import { Montserrat } from 'next/font/google';
-import './globals.css';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
+import { Montserrat } from "next/font/google";
+import "./globals.css";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
-import StyledComponentsRegistry from '@/lib/registry';
-import { ThemeProvider } from '@/providers/ThemeProvider';
-import { LanguageProvider } from '@/providers/LanguageProvider';
+import StyledComponentsRegistry from "@/lib/registry";
+import { ThemeProvider } from "@/providers/ThemeProvider";
+import { LanguageProvider } from "@/providers/LanguageProvider";
 
 const montserrat = Montserrat({
-  subsets: ['latin'],
-  display: 'swap',
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export default function RootLayout({
